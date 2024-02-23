@@ -1,0 +1,15 @@
+# make sure you have the conda installed in your system. 
+
+# Open Git Bash in the folder profile.d 
+
+# search anaconda3 folder it must be present at this location by default: 
+(C:\ProgramData\anaconda3\etc\profile.d)
+
+# once you reach this directory. right click and open the git bash 
+
+# Execute the following command
+echo ". ${PWD}/conda.sh" >> ~/.bashrc
+
+# Reopen Git Bash and activate conda : it will work.
+conda activate visa
+
