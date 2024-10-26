@@ -87,3 +87,70 @@ https://www.kaggle.com/datasets/moro23/easyvisa-dataset
 
 
 # utilis -> the common functionwe use 
+
+
+
+
+#######################################################################################################
+
+Workflow 
+1.) constant   (define constants)
+2.) config_entity    (all the folder & file path)
+3.) artifact entity     (all the output files to be generated)
+4.) component   (data ingestion & other stages like transformation, validation, etc)
+5.) pipeline    
+6.) app.py
+
+
+
+
+
+
+#####################################################################
+
+HOW TO EXECUTE THIS 
+
+Open Git BASH navigate to the directory
+Activate venv : conda activate visa
+
+then excute the following commands as it contain the mongodbURI , it will be different for your mongodb but u need it ;) hehe :)
+  export MONGODB_URL="mongodb+srv://bhomitsopra:lDsBZ63S0f9QvWf4@cluster0.yagn7o9.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+  python demo.py
+
+
+
+#####################################################################
+very first file in project has to be the COnfig file  -> Constants -> _init_.py file. this is our constructor file also.
+
+DATA INGESTION  ----> DATA VALIDATION...
+
+1.) Data Validatiion Component  : In data validation we check the columns then we do the datat drift checking if the status of datadrift is false in report. then we proceed with next.   
+    It only returns True Falase that tells whether the data is valid or not for next components or step.  The distribution of data has to good and reshuffling helps in achieveing it.
+
+    schema.yaml -  we prepare it for describing the columns how to deal with them in the dataset
+    This file schema.yaml has to read by the read_yaml function present in main_utils.py file.
+
+        **  (config_entity.py & artifact.py has to be added with the details)  **
+
+        ** Inside the dataValidaiton class detect_dataset_drift is responsible for returning the train - test drift results true false there we have the reference_df means the traiing datat and current_df means the test data the new data where we want to check.
+
+
+
+2.) Data Transformation Component : 
+
+
+
+3.) Model Trainer
+
+
+
+4.) Model Evaluation
+
+
+5.) Model Pusher
+
+
+6.) Prediction Pipeline
+
+
+7.) Deployment
